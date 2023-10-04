@@ -32,4 +32,20 @@ function getParkByState() {
 
             getParkByState()
 
-            
+function renderParks(data, currentDiv) {    
+    console.log(currentDiv)
+    var parkName=$("#park-name")
+    var parkCity=$("#park-city")
+    var parkLoc=$("#park-loc")
+    var parkUrl=$("#park-url")
+
+    parkName.text(data.name)
+    parkCity.text(data.city)
+    parkLoc.text(`Location: ${data.addresses.line1}`)
+    parkUrl.text(`URL: ${data.url}`)
+
+    currentDiv.append(cityH2);
+    currentDiv.append(tempP);
+    currentDiv.append(windSp);
+    currentDiv.append(humidity);
+}
