@@ -4,7 +4,7 @@
 // $(document).ready(function() {
 //     $('select').formSelect();
 // });
-var stateCode = "UT"
+var stateCode = ""
 // var selectedState = document.getElementById("state-select")
 // selectedState.addEventListener("select", assignSelectedState)
 // function assignSelectedState(event){
@@ -17,12 +17,12 @@ let searchInput = document.getElementById('search-form');
 searchInput.addEventListener('click', getSearchInput);
 function getSearchInput(event) {
   event.preventDefault();
-  let searchTerm = document.getElementById('search-term').value.trim();
   let searchFormat = document.getElementById('search-format').value.trim();
  
- console.log(searchTerm)
  console.log(searchFormat)
 };
+
+// };
 //dom element ref
 //put the document.quertSelector for the dropdown and target it by ID. will need to
 
