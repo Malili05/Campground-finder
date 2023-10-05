@@ -1,5 +1,3 @@
-// global var 
-//var npsapiRootUrl = "https://developer.nps.gov/api/v1/"
 //var npsapiKey = "s6p9WyTqkZ8EGpaLI4YUraP4LPf0BEkmFtlLC3H8"
 
 //Grab input from search form
@@ -41,10 +39,17 @@ function renderParks(data) {
     var parkUrl=$("#park-url")
 
     parkName.text(data.data[0].name)
-    parkCity.text(data.data[0].city)
-    // parkLoc.text(`Location: ${data.addresses.line1}`)
-    // parkUrl.text(`URL: ${data.url}`)
- console.log(data.name)
+    parkCity.text(data.data[0].addresses[0].city)
+    parkLoc.text(`Location: ${data.data[0].addresses[0].line1}`)
+    parkUrl.text(`URL: ${data.data[0].url}`)
+
+
+
+
+
+
+
+
     // document.append(cityH2);
     // document.append(tempP);
     // document.append(windSp);
