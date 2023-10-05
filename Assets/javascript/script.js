@@ -10,11 +10,12 @@ function getSearchInput(event) {
   let searchFormat = document.getElementById('search-format').value.trim();
  
  console.log(searchFormat)
+ getParkByState(searchFormat)
 };
-let searchFormat = document.getElementById('search-format')
-var stateCode = "UT"
+
 //function to display parks by state as selected from drop down
-function getParkByState() {
+function getParkByState(stateCode) {
+
     var requestUrl = `https://developer.nps.gov/api/v1/parks?stateCode=${stateCode}&api_key=s6p9WyTqkZ8EGpaLI4YUraP4LPf0BEkmFtlLC3H8`
 
 
@@ -24,28 +25,30 @@ function getParkByState() {
             
         }).then(function(data){
             console.log(data)
+            renderParks(data)
         })
 
 
                 
             }
 
-            getParkByState()
+        
 
-function renderParks(data, currentDiv) {    
-    console.log(currentDiv)
+function renderParks(data) {    
     var parkName=$("#park-name")
     var parkCity=$("#park-city")
     var parkLoc=$("#park-loc")
     var parkUrl=$("#park-url")
 
-    parkName.text(data.name)
-    parkCity.text(data.city)
-    parkLoc.text(`Location: ${data.addresses.line1}`)
-    parkUrl.text(`URL: ${data.url}`)
+    parkName.text(data.data[0].name)
+    parkCity.text(data.data[0].city)
+    // parkLoc.text(`Location: ${data.addresses.line1}`)
+    // parkUrl.text(`URL: ${data.url}`)
+ console.log(data.name)
+    // document.append(cityH2);
+    // document.append(tempP);
+    // document.append(windSp);
+    // document.append(humidity);
 
-    currentDiv.append(cityH2);
-    currentDiv.append(tempP);
-    currentDiv.append(windSp);
-    currentDiv.append(humidity);
+    //element.setAttribute("src", data.images.[0].url); //help with this. I am trying to pull the image url from the data
 }
