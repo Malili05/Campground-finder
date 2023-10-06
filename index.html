@@ -15,10 +15,10 @@
 </section>
 <div class="columns is-desktop">
   <div class="column">Visit List</div>
+  <div id="visit-list" class="container"></div>
 
 
   <div class="column is-half-desktop">
-    
  <!-- Dropdown Structure -->
   <div class="notification is-primary">
   <div id="search-form" class="select is-medium">
@@ -76,21 +76,23 @@
         <option value="WI">Wisconsin</option>
         <option value="WY">Wyoming</option>
     </select>
-  </div> 
-<div id="card-container"></div>
+  </div>
+  <div id="cards-container"></div>
+ <template id="card-template">
   <div class="card">
-        <div class="card-content">
-          <div class="content">
-              <p id="park-name" class="title is-4"></p>
-              <p id="park-city" class="subtitle is-6"></p>
-              <p id="park-loc" class="subtitle is-6"></p>
-              <a id="park-url" class="subtitle is-6"></a>
-          </div>
-        </div>
+    <div class="card-content">
+      <div class="content">
+        <p id="park-name" class="title is-4"></p>
+        <p id="park-city" class="subtitle is-6"></p>
+        <p id="park-loc" class="subtitle is-6"></p>
+        <img id="park-url" class="subtitle is-6"></img>
+        <button id="save-park" class="button">Save</button>
       </div>
-      </div>
-    </div> 
-  <div class="column">Weather    </div>
+    </div>
+  </div>
+</template>
+
+<div class="column">Weather</div>
 </body>
     <!-- Compiled and minified JavaScript -->
     <script
